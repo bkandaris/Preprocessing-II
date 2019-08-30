@@ -28,5 +28,18 @@
   .button();
 }
 
+// Animation Mixin
+
+.animations(@duration, @count) {
+  animation-name: backgroundchanger;
+  animation-duration: @duration;
+  animation-iteration-count: @count;
+}
+
+@keyframes backgroundchanger {
+  0% {background-color: @eastern-blue;}
+  50% {background-color: white;}
+  100% {background-color: @eastern-blue;}
+}
 
 
