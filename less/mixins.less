@@ -1,1 +1,45 @@
 // Mixins in here
+
+// Mobile Query
+
+@mobile: ~"(max-width: 500px)";
+
+.flex(@justify: center, @align: center) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+.borders() {
+  border-bottom: dashed;
+  border-color: @silver;
+}
+
+.button(@height: 50px; @font-size: 20px; @radius: 10px;) {
+  .flex();
+  color: @white;
+  background: darken(@eastern-blue, 10%);
+  height: @height;
+  font-size: @font-size;
+  border-radius: @radius;
+}
+
+.btn {
+  .button();
+}
+
+// Animation Mixin
+
+.animations(@duration, @count) {
+  animation-name: backgroundchanger;
+  animation-duration: @duration;
+  animation-iteration-count: @count;
+}
+
+@keyframes backgroundchanger {
+  0% {background-color: @eastern-blue;}
+  50% {background-color: white;}
+  100% {background-color: @eastern-blue;}
+}
+
+
